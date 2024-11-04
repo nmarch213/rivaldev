@@ -84,7 +84,7 @@ export const Dots = () => {
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.globalAlpha = 0.5;
+      ctx.globalAlpha = 0.4;
 
       dotsRef.current.forEach((dot) => {
         // Add small random variations to speed
@@ -103,7 +103,7 @@ export const Dots = () => {
         const dx = mouseRef.current.x - dot.x;
         const dy = mouseRef.current.y - dot.y;
         const distance = Math.sqrt(dx * dx + dy * dy);
-        const maxDistance = 100;
+        const maxDistance = 200;
 
         if (distance < maxDistance) {
           // Push dots away from cursor

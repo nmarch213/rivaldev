@@ -7,15 +7,16 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
+import { Dots } from "./components/dots";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Nicholas March",
+    default: "Nicholas March - Senior UI Engineer",
     template: "%s | Nicholas March",
   },
   description:
-    "Software engineer, Vim enthusiast, and advocate for developer experience.",
+    "Senior UI Engineer specialized in React, Angular, and Node.js development. Building scalable web applications with focus on developer experience and AI integration.",
   openGraph: {
     title: "Nicholas March",
     description:
@@ -54,10 +55,11 @@ export default function RootLayout({
         GeistMono.variable
       )}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
-          {children}
+      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto flex flex-col relative min-h-screen">
+        <Dots />
+        <Navbar className="sticky top-0 z-20 bg-black/70" />
+        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0 z-10 bg-black/70">
+          <div className="flex-grow">{children}</div>
           <Footer />
           <Analytics />
           <SpeedInsights />
